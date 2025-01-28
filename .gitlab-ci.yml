@@ -46,9 +46,10 @@ default:
   before_script:
     - apt -y update
     - apt -y install apt-utils
-    - apt -y install net-tools python3 python3-pip
+    - apt -y install net-tools python3 python3-pip python3.12-venv
     - apt -y upgrade
-    - python3 -m pip install -r requirements.txt
+    - python3 -m venv .venv
+    - ./.venv/bin/python3 -m pip install -r requirements.txt
 
 
 migrations:
@@ -65,7 +66,7 @@ django-tests:
   script:
     # The MYSQL user only gets permissions for MYSQL_DB, so Django can't create a test database.
     # use python3 explicitly. see https://wiki.ubuntu.com/Python/3
-    - python3 manage.py test
+    - ./.venv/bin/python3 manage.py test
 
 deploy:
   stage: deploy
