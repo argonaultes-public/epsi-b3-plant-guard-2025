@@ -48,7 +48,7 @@ default:
     - apt -y install apt-utils
     - apt -y install net-tools python3 python3-pip
     - apt -y upgrade
-    - pip install -r requirements.txt
+    - python3 -m pip install -r requirements.txt
 
 
 migrations:
