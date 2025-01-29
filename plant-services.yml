@@ -1,0 +1,5 @@
+services:
+  webapp:
+    image: ghcr.io/argonaultes-public/plantguard:latest
+    ports:
+      - 8000:8000
