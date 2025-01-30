@@ -1,10 +1,11 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Owner(models.Model):
-    email = models.CharField(max_length=100)
+class Owner(User):
+    avatar_url = models.CharField(max_length=100, null=True)
+    timezone = models.CharField(max_length=50, default='Europe/Paris')
 
     def __str__(self):
         return self.email

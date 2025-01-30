@@ -1,6 +1,6 @@
 from django.test import TestCase
 from plantsitting.models import Plant, Owner
-
+from django.contrib.sessions.middleware import SessionMiddleware
 # Create your tests here.
 
 class PlantTestCase(TestCase):
@@ -14,5 +14,5 @@ class PlantTestCase(TestCase):
         self.assertEqual(plant_result.name, 'plant1')
         self.assertEqual(plant_result.owner.email, 'test@email.com')
 
-    def test_plant_2(self):
-        pass
+    # def test_plant_2(self):
+    #     self.fail('Not yet implemented')

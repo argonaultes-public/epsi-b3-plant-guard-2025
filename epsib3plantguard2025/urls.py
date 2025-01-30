@@ -23,6 +23,9 @@ from plantsitting import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("plants/", views.plants, name='plants index'),
-    path("plantstpl/", views.plants_tpl),
-    path("plantsjson/", views.plants_json),
+    path("plantstpl/", views.plants_tpl, name='plants tpl'),
+    path("plantsjson/", views.plants_json, name='plants json'),
+    path("custom_login", views.custom_login, name='custom_login'),
+    path("home", views.plants_tpl, name="home"),
+    path("login", views.display_login, name="login"),
 ]
